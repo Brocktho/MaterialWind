@@ -2,8 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import type { ClassOptions } from "~/StyleHelpers";
-import { Tooltip } from "@mui/material";
-import useForkRef from "~/Hooks/useForkRef";
 
 export interface BadgeProps extends React.HtmlHTMLAttributes<HTMLLabelElement> {
 	clsxs?: ClassOptions;

@@ -11,7 +11,7 @@ export const meta: V2_MetaFunction = () => {
 
 export default function Index() {
 	return (
-		<div className="w-full min-h-screen h-full flex flex-row items-center justify-center gap-3">
+		<div className="w-full min-h-screen h-full flex flex-col items-center justify-center gap-6">
 			<Badge>
 				<div>Hi</div>
 			</Badge>
@@ -20,7 +20,13 @@ export default function Index() {
 			</Tooltip>
 			<Button>TEXT</Button>
 			<Button variant="contained">CONTAINED</Button>
-			<Button variant="outlined">OUTLINED</Button>
+			<div className="flex flex-row gap-3">
+				<Button variant="outlined">OUTLINED</Button>
+				<Button variant="outlined">OUTLINED</Button>
+				<Button disabled variant="outlined">
+					OUTLINED
+				</Button>
+			</div>
 		</div>
 	);
 }
