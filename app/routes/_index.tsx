@@ -19,9 +19,25 @@ export default function Index() {
 				<div>Hello</div>
 			</Tooltip>
 			<Button>TEXT</Button>
-			<Button variant="contained">CONTAINED</Button>
 			<div className="flex flex-row gap-3">
-				<Button variant="outlined">OUTLINED</Button>
+				<Button variant="elevated">ELEVATED</Button>
+				<Button variant="elevated" disabled>
+					ELEVATED
+				</Button>
+			</div>
+			<div className="flex flex-row gap-3">
+				<Button variant="filled">FILLED</Button>
+				<Button variant="filled" disabled>
+					FILLED
+				</Button>
+			</div>
+			<div className="flex flex-row gap-3">
+				<Button variant="tonal">CONTAINED</Button>
+				<Button variant="tonal" disabled>
+					CONTAINED
+				</Button>
+			</div>
+			<div className="flex flex-row gap-3">
 				<Button variant="outlined">OUTLINED</Button>
 				<Button disabled variant="outlined">
 					OUTLINED

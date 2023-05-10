@@ -1,8 +1,14 @@
 /** @format */
 
-export const CreateClasses = (given: ClassOptions, defaults: ClassOptions) => {
+export const CreateClasses = (defaults: ClassOptions, given?: ClassOptions) => {
+	if (given) {
+		const merged = Object.assign({}, defaults, given);
+		return Object.keys(merged).map(key => {
+			return [merged[key]];
+		});
+	}
 	return Object.keys(defaults).map(key => {
-		return [given[key], defaults[key]];
+		return [defaults[key]];
 	});
 };
 
@@ -33,4 +39,8 @@ export interface ClassOptions extends Record<string, string | undefined> {
 	disabled?: string;
 	hover?: string;
 	active?: string;
+	before?: string;
+	after?: string;
+	focus_visible?: string;
+	animate?: string;
 }
