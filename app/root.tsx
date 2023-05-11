@@ -10,6 +10,7 @@ import {
 	Scripts,
 	ScrollRestoration,
 } from "@remix-run/react";
+import { SSRProvider } from "react-aria";
 import tailwindcss from "./tailwind.css";
 import Button from "./components/Inputs/Button";
 import { useState } from "react";
@@ -19,7 +20,7 @@ export const links: LinksFunction = () => [
 	{ rel: "stylesheet", href: tailwindcss },
 ];
 
-export default function App() {
+export function App() {
 	const [theme, setTheme] = useState<"light" | "dark">("light");
 	return (
 		<html lang="en" className={theme}>
@@ -49,6 +50,14 @@ export default function App() {
 				<LiveReload />
 			</body>
 		</html>
+	);
+}
+
+export default function AppWithProviders() {
+	return (
+		<SSRProvider>
+			<App />
+		</SSRProvider>
 	);
 }
 

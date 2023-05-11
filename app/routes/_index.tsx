@@ -12,12 +12,6 @@ export const meta: V2_MetaFunction = () => {
 export default function Index() {
 	return (
 		<div className="w-full min-h-screen h-full flex flex-col items-center justify-center gap-6">
-			<Badge>
-				<div>Hi</div>
-			</Badge>
-			<Tooltip title="Hello">
-				<div>Hello</div>
-			</Tooltip>
 			<div className="flex flex-row gap-3">
 				<Button>TEXT</Button>
 				<Button disabled>TEXT</Button>
