@@ -13,353 +13,204 @@ module.exports = {
 				focus: "0.12",
 				active: "0.12",
 				drag: "0.16",
+				disabled: "0.38",
 			},
 			colors: {
-				"light-primary": "hsla(9, 66%, 39%, 1)",
-				"light-hover-primary": "hsla(9, 66%, 39%, 0.08)",
-				"light-active-primary": "hsla(9, 66%, 39%, 0.12)",
-				"light-focus-primary": "hsla(9, 66%, 39%, 0.12)",
-				"light-drag-primary": "hsla(9, 66%, 39%, 0.16)",
-				"light-disabled-primary": "hsla(9, 66%, 39%, 0.38)",
-
-				"light-on-primary": "hsla(0, 0%, 100%, 1)",
-				"light-hover-on-primary": "hsla(0, 0%, 100%, 0.08)",
-				"light-focus-on-primary": "hsla(0, 0%, 100%, 0.12)",
-				"light-active-on-primary": "hsla(0, 0%, 100%, 0.12)",
-				"light-drag-on-primary": "hsla(0, 0%, 100%, 0.16)",
-				"light-disabled-on-primary": "hsla(9, 66%, 39%, 0.38)",
-
-				"light-primary-container": "hsla(12, 100%, 87%, 1)",
-				"light-hover-primary-container": "hsla(12, 100%, 87%, 0.08)",
-				"light-focus-primary-container": "hsla(12, 100%, 87%, 0.12)",
-				"light-active-primary-container": "hsla(12, 100%, 87%, 0.12)",
-				"light-drag-primary-container": "hsla(12, 100%, 87%, 0.16)",
-				"light-disabled-primary-container": "hsla(12, 100%, 87%, 0.38)",
-
-				"light-on-primary-container": "hsla(2, 99%, 12%, 1)",
-				"light-hover-on-primary-container": "hsla(2, 99%, 12%, 0.08)",
-				"light-focus-on-primary-container": "hsla(2, 99%, 12%, 0.12)",
-				"light-active-on-primary-container": "hsla(2, 99%, 12%, 0.12)",
-				"light-drag-on-primary-container": "hsla(2, 99%, 12%, 0.16)",
-				"light-disabled-on-primary-container":
-					"hsla(12, 100%, 87%, 0.38)",
-
-				"light-secondary": "hsla(38, 100%, 27%, 1)",
-				"light-hover-secondary": "hsla(38, 100%, 27%, 0.08)",
-				"light-focus-secondary": "hsla(38, 100%, 27%, 0.12)",
-				"light-active-secondary": "hsla(38, 100%, 27%, 0.12)",
-				"light-drag-secondary": "hsla(38, 100%, 27%, 0.16)",
-				"light-disabled-secondary": "hsla(38, 100%, 27%, 0.38)",
-
-				"light-on-secondary": "hsla(0, 0%, 100%, 1)",
-				"light-hover-on-secondary": "hsla(0, 0%, 100%, 0.08)",
-				"light-focus-on-secondary": "hsla(0, 0%, 100%, 0.12)",
-				"light-active-on-secondary": "hsla(0, 0%, 100%, 0.12)",
-				"light-drag-on-secondary": "hsla(0, 0%, 100%, 0.16)",
-				"light-disabled-on-secondary": "hsla(38, 100%, 87%, 0.38)",
-
-				"light-secondary-container": "hsla(38, 100%, 87%, 1)",
-				"light-hover-secondary-container": "hsla(38, 100%, 87%, 0.08)",
-				"light-focus-secondary-container": "hsla(38, 100%, 87%, 0.12)",
-				"light-active-secondary-container": "hsla(38, 100%, 87%, 0.12)",
-				"light-drag-secondary-container": "hsla(38, 100%, 87%, 0.16)",
-				"light-disabled-secondary-container":
-					"hsla(38, 100%, 87%, 0.38)",
-
-				"light-on-secondary-container": "hsla(40, 100%, 9%, 1)",
-				"light-hover-on-secondary-container":
-					"hsla(40, 100%, 9%, 0.08)",
-				"light-focus-on-secondary-container":
-					"hsla(40, 100%, 9%, 0.12)",
-				"light-active-on-secondary-container":
-					"hsla(40, 100%, 9%, 0.12)",
-				"light-drag-on-secondary-container": "hsla(40, 100%, 9%, 0.16)",
-				"light-disabled-on-secondary-container":
-					"hsla(38, 100%, 87%, 0.38)",
-
-				"light-tertiary": "hsla(329, 33%, 38%, 1)",
-				"light-hover-tertiary": "hsla(329, 33%, 38%, 0.08)",
-				"light-focus-tertiary": "hsla(329, 33%, 38%, 0.12)",
-				"light-active-tertiary": "hsla(329, 33%, 38%, 0.12)",
-				"light-drag-tertiary": "hsla(329, 33%, 38%, 0.16)",
-				"light-disabled-tertiary": "hsla(329, 33%, 38%, 0.38)",
-
-				"light-on-tertiary": "hsla(0, 0%, 100%, 1)",
-				"light-hover-on-tertiary": "hsla(0, 0%, 100%, 0.08)",
-				"light-focus-on-tertiary": "hsla(0, 0%, 100%, 0.12)",
-				"light-active-on-tertiary": "hsla(0, 0%, 100%, 0.12)",
-				"light-drag-on-tertiary": "hsla(0, 0%, 100%, 0.16)",
-				"light-disabled-on-tertiary": "hsla(0, 0%, 100%, 0.38)",
-
-				"light-tertiary-container": "hsla(340, 100%, 91%, 1)",
-				"light-hover-tertiary-container": "hsla(340, 100%, 91%, 0.08)",
-				"light-focus-tertiary-container": "hsla(340, 100%, 91%, 0.12)",
-				"light-active-tertiary-container": "hsla(340, 100%, 91%, 0.12)",
-				"light-drag-tertiary-container": "hsla(340, 100%, 91%, 0.16)",
-				"light-disabled-tertiary-container":
-					"hsla(340, 100%, 91%, 0.38)",
-
-				"light-on-tertiary-container": "hsla(322, 100%, 12%, 1)",
-				"light-hover-on-tertiary-container":
-					"hsla(322, 100%, 12%, 0.08)",
-				"light-focus-on-tertiary-container":
-					"hsla(322, 100%, 12%, 0.12)",
-				"light-active-on-tertiary-container":
-					"hsla(322, 100%, 12%, 0.12)",
-				"light-drag-on-tertiary-container":
-					"hsla(322, 100%, 12%, 0.16)",
-				"light-disabled-on-tertiary-container":
-					"hsla(0, 0%, 100%, 0.38)",
-
-				"light-error": "hsla(0, 75%, 45%, 1)",
-				"light-hover-error": "hsla(0, 75%, 45%, 0.08)",
-				"light-focus-error": "hsla(0, 75%, 45%, 0.12)",
-				"light-active-error": "hsla(0, 75%, 45%, 0.12)",
-				"light-drag-error": "hsla(0, 75%, 45%, 0.16)",
-				"light-disabled-error": "hsla(0, 75%, 45%, 0.38)",
-
-				"light-on-error": "hsla(0, 0%, 100%, 1)",
-				"light-hover-on-error": "hsla(0, 0%, 100%, 0.08)",
-				"light-focus-on-error": "hsla(0, 0%, 100%, 0.12)",
-				"light-active-on-error": "hsla(0, 0%, 100%, 0.12)",
-				"light-drag-on-error": "hsla(0, 0%, 100%, 0.16)",
-
-				"light-error-container": "hsla(7, 100%, 90%, 1)",
-				"light-hover-error-container": "hsla(7, 100%, 90%, 0.08)",
-				"light-focus-error-container": "hsla(7, 100%, 90%, 0.12)",
-				"light-active-error-container": "hsla(7, 100%, 90%, 0.12)",
-				"light-drag-error-container": "hsla(7, 100%, 90%, 0.16)",
-				"light-disabled-error-container": "hsla(7, 100%, 90%, 0.38)",
-
-				"light-on-error-container": "hsla(351, 99%, 13%, 1)",
-				"light-hover-on-error-container": "hsla(351, 99%, 13%, 0.08)",
-				"light-focus-on-error-container": "hsla(351, 99%, 13%, 0.12)",
-				"light-active-on-error-container": "hsla(351, 99%, 13%, 0.12)",
-				"light-drag-on-error-container": "hsla(351, 99%, 13%, 0.16)",
-				"light-disabled-on-error-container": "hsla(0, 0%, 100%, 0.38)",
-
-				"light-bg": "hsla(60, 100%, 98%, 1)",
-				"light-hover-bg": "hsla(60, 100%, 98%, 0.08)",
-				"light-focus-bg": "hsla(60, 100%, 98%, 0.12)",
-				"light-active-bg": "hsla(60, 100%, 98%, 0.12)",
-				"light-drag-bg": "hsla(60, 100%, 98%, 0.16)",
-				"light-disabled-bg": "hsla(60, 100%, 98%, 0.38)",
-
-				"light-on-bg": "hsla(218, 100%, 12%, 1)",
-				"light-hover-on-bg": "hsla(218, 100%, 12%, 0.08)",
-				"light-focus-on-bg": "hsla(218, 100%, 12%, 0.12)",
-				"light-active-on-bg": "hsla(218, 100%, 12%, 0.12)",
-				"light-drag-on-bg": "hsla(218, 100%, 12%, 0.16)",
-
-				"light-surface": "hsla(300, 100%, 99%, 1)",
-				"light-hover-surface": "hsla(300, 100%, 99%, 0.08)",
-				"light-focus-surface": "hsla(300, 100%, 99%, 0.12)",
-				"light-active-surface": "hsla(300, 100%, 99%, 0.12)",
-				"light-drag-surface": "hsla(300, 100%, 99%, 0.16)",
-				"light-disabled-surface": "hsla(300, 100%, 99%, 0.38)",
-
-				"light-on-surface": "hsla(9, 12%, 11%, 1)",
-				"light-hover-on-surface": "hsla(9, 12%, 11%, 0.08)",
-				"light-focus-on-surface": "hsla(9, 12%, 11%, 0.12)",
-				"light-active-on-surface": "hsla(9, 12%, 11%, 0.12)",
-				"light-drag-on-surface": "hsla(9, 12%, 11%, 0.16)",
-				"light-disabled-on-surface": "hsla(9, 12%, 11%, 0.38)",
-
-				"light-outline": "hsla(15, 10%, 51%, 1)",
-				"light-hover-outline": "hsla(15, 10%, 51%, 0.08)",
-				"light-focus-outline": "hsla(15, 10%, 51%, 0.12)",
-				"light-active-outline": "hsla(15, 10%, 51%, 0.12)",
-				"light-drag-outline": "hsla(15, 10%, 51%, 0.16)",
-				"light-disabled-outline": "hsla(15, 10%, 51%, 0.38)",
-
-				"light-surface-variant": "hsla(9, 63%, 87%, 1)",
-				"light-hover-surface-variant": "hsla(9, 63%, 87%, 0.08)",
-				"light-focus-surface-variant": "hsla(9, 63%, 87%, 0.12)",
-				"light-active-surface-variant": "hsla(9, 63%, 87%, 0.12)",
-				"light-drag-surface-variant": "hsla(9, 63%, 87%, 0.16)",
-				"light-disabled-surface-variant": "hsla(9, 63%, 87%, 0.38)",
-
-				"light-on-surface-variant": "hsla(30, 11%, 28%, 1)",
-				"light-hover-on-surface-variant": "hsla(30, 11%, 28%, 0.08)",
-				"light-focus-on-surface-variant": "hsla(30, 11%, 28%, 0.12)",
-				"light-active-on-surface-variant": "hsla(30, 11%, 28%, 0.12)",
-				"light-drag-on-surface-variant": "hsla(30, 11%, 28%, 0.16)",
-				"light-disabled-on-surface-variant": "hsla(30, 11%, 28%, 0.38)",
-
-				"light-surface-low": "hsla(9, 6%, 96%, 1)",
-
-				"dark-surface-low": "hsla(9, 6%, 10%, 1)",
-
-				"dark-primary": "hsla(6, 100%, 78%, 1)",
-				"dark-hover-primary": "hsla(6, 100%, 78%, 0.08)",
-				"dark-focus-primary": "hsla(6, 100%, 78%, 0.12)",
-				"dark-active-primary": "hsla(6, 100%, 78%, 0.12)",
-				"dark-drag-primary": "hsla(6, 100%, 78%, 0.16)",
-				"dark-disabled-primary": "hsla(6, 100%, 78%, 0.38)",
-
-				"dark-on-primary": "hsla(11, 98%, 20%, 1)",
-				"dark-hover-on-primary": "hsla(11, 98%, 20%, 0.08)",
-				"dark-focus-on-primary": "hsla(11, 98%, 20%, 0.12)",
-				"dark-active-on-primary": "hsla(11, 98%, 20%, 0.12)",
-				"dark-drag-on-primary": "hsla(11, 98%, 20%, 0.16)",
-				"dark-disabled-on-primary": "hsla(11, 98%, 20%, 0.38)",
-
-				"dark-primary-container": "hsla(351, 99%, 13%, 1)",
-				"dark-hover-primary-container": "hsla(351, 99%, 13%, 0.08)",
-				"dark-focus-primary-container": "hsla(351, 99%, 13%, 0.12)",
-				"dark-active-primary-container": "hsla(351, 99%, 13%, 0.12)",
-				"dark-drag-primary-container": "hsla(351, 99%, 13%, 0.16)",
-				"dark-disabled-primary-container": "hsla(351, 99%, 13%, 0.38)",
-
-				"dark-on-primary-container": "hsla(12, 100%, 90%, 1)",
-				"dark-hover-on-primary-container": "hsla(12, 100%, 90%, 0.08)",
-				"dark-focus-on-primary-container": "hsla(12, 100%, 90%, 0.12)",
-				"dark-active-on-primary-container": "hsla(12, 100%, 90%, 0.12)",
-				"dark-drag-on-primary-container": "hsla(12, 100%, 90%, 0.16)",
-				"dark-disabled-on-primary-container":
-					"hsla(12, 100%, 90%, 0.38)",
-
-				"dark-secondary": "hsla(38, 100%, 70%, 1)",
-				"dark-hover-secondary": "hsla(38, 100%, 70%, 0.08)",
-				"dark-focus-secondary": "hsla(38, 100%, 70%, 0.12)",
-				"dark-active-secondary": "hsla(38, 100%, 70%, 0.12)",
-				"dark-drag-secondary": "hsla(38, 100%, 70%, 0.16)",
-				"dark-disabled-secondary": "hsla(38, 100%, 70%, 0.38)",
-
-				"dark-on-secondary": "hsla(20, 100%, 14%, 1)",
-				"dark-hover-on-secondary": "hsla(20, 100%, 14%, 0.08)",
-				"dark-focus-on-secondary": "hsla(20, 100%, 14%, 0.12)",
-				"dark-active-on-secondary": "hsla(20, 100%, 14%, 0.12)",
-				"dark-drag-on-secondary": "hsla(20, 100%, 14%, 0.16)",
-				"dark-disabled-on-secondary": "hsla(20, 100%, 14%, 0.38)",
-
-				"dark-secondary-container": "hsla(36, 100%, 20%, 1)",
-				"dark-hover-secondary-container": "hsla(36, 100%, 20%, 0.08)",
-				"dark-focus-secondary-container": "hsla(36, 100%, 20%, 0.12)",
-				"dark-active-secondary-container": "hsla(36, 100%, 20%, 0.12)",
-				"dark-drag-secondary-container": "hsla(36, 100%, 20%, 0.16)",
-				"dark-disabled-secondary-container":
-					"hsla(36, 100%, 20%, 0.38)",
-
-				"dark-on-secondary-container": "hsla(30, 100%, 86%, 1)",
-				"dark-hover-on-secondary-container":
-					"hsla(30, 100%, 86%, 0.08)",
-				"dark-focus-on-secondary-container":
-					"hsla(30, 100%, 86%, 0.12)",
-				"dark-active-on-secondary-container":
-					"hsla(30, 100%, 86%, 0.12)",
-				"dark-drag-on-secondary-container": "hsla(30, 100%, 86%, 0.16)",
-				"dark-disabled-on-secondary-container":
-					"hsla(30, 100%, 86%, 0.38)",
-
-				"dark-tertiary": "hsla(330, 100%, 80%, 1)",
-				"dark-hover-tertiary": "hsla(330, 100%, 80%, 0.08)",
-				"dark-focus-tertiary": "hsla(330, 100%, 80%, 0.12)",
-				"dark-active-tertiary": "hsla(330, 100%, 80%, 0.12)",
-				"dark-drag-tertiary": "hsla(330, 100%, 80%, 0.16)",
-				"dark-disabled-tertiary": "hsla(330, 100%, 80%, 0.38)",
-
-				"dark-on-tertiary": "hsla(329, 68%, 22%, 1)",
-				"dark-hover-on-tertiary": "hsla(329, 68%, 22%, 0.08)",
-				"dark-focus-on-tertiary": "hsla(329, 68%, 22%, 0.12)",
-				"dark-active-on-tertiary": "hsla(329, 68%, 22%, 0.12)",
-				"dark-drag-on-tertiary": "hsla(329, 68%, 22%, 0.16)",
-				"dark-disabled-on-tertiary": "hsla(329, 68%, 22%, 0.38)",
-
-				"dark-tertiary-container": "hsla(329, 34%, 28%, 1)",
-				"dark-hover-tertiary-container": "hsla(329, 34%, 28%, 0.08)",
-				"dark-focus-tertiary-container": "hsla(329, 34%, 28%, 0.12)",
-				"dark-active-tertiary-container": "hsla(329, 34%, 28%, 0.12)",
-				"dark-drag-tertiary-container": "hsla(329, 34%, 28%, 0.16)",
-				"dark-disabled-tertiary-container": "hsla(329, 34%, 28%, 0.38)",
-
-				"dark-on-tertiary-container": "hsla(345, 100%, 90%, 1)",
-				"dark-hover-on-tertiary-container":
-					"hsla(345, 100%, 90%, 0.08)",
-				"dark-focus-on-tertiary-container":
-					"hsla(345, 100%, 90%, 0.12)",
-				"dark-active-on-tertiary-container":
-					"hsla(345, 100%, 90%, 0.12)",
-				"dark-drag-on-tertiary-container": "hsla(345, 100%, 90%, 0.16)",
-				"dark-disabled-on-tertiary-container":
-					"hsla(345, 100%, 90%, 0.38)",
-
-				"dark-error": "hsla(6, 100%, 78%, 1)",
-				"dark-hover-error": "hsla(6, 100%, 78%, 0.08)",
-				"dark-focus-error": "hsla(6, 100%, 78%, 0.12)",
-				"dark-active-error": "hsla(6, 100%, 78%, 0.12)",
-				"dark-drag-error": "hsla(6, 100%, 78%, 0.16)",
-				"dark-disabled-error": "hsla(6, 100%, 78%, 0.38)",
-
-				"dark-on-error": "hsla(351, 100%, 20%, 1)",
-				"dark-hover-on-error": "hsla(351, 100%, 20%, 0.08)",
-				"dark-focus-on-error": "hsla(351, 100%, 20%, 0.12)",
-				"dark-active-on-error": "hsla(351, 100%, 20%, 0.12)",
-				"dark-drag-on-error": "hsla(351, 100%, 20%, 0.16)",
-				"dark-disabled-on-error": "hsla(351, 100%, 20%, 0.38)",
-
-				"dark-error-container": "hsla(352, 100%, 29%, 1)",
-				"dark-hover-error-container": "hsla(352, 100%, 29%, 0.08)",
-				"dark-focus-error-container": "hsla(352, 100%, 29%, 0.12)",
-				"dark-active-error-container": "hsla(352, 100%, 29%, 0.12)",
-				"dark-drag-error-container": "hsla(352, 100%, 29%, 0.16)",
-				"dark-disabled-error-container": "hsla(352, 100%, 29%, 0.38)",
-
-				"dark-on-error-container": "hsla(7, 100%, 90%, 1)",
-				"dark-hover-on-error-container": "hsla(7, 100%, 90%, 0.08)",
-				"dark-focus-on-error-container": "hsla(7, 100%, 90%, 0.12)",
-				"dark-active-on-error-container": "hsla(7, 100%, 90%, 0.12)",
-				"dark-drag-on-error-container": "hsla(7, 100%, 90%, 0.16)",
-				"dark-disabled-on-error-container": "hsla(7, 100%, 90%, 0.38)",
-
-				"dark-bg": "hsla(9, 12%, 11%, 1)",
-				"dark-hover-bg": "hsla(9, 12%, 11%, 0.08)",
-				"dark-focus-bg": "hsla(9, 12%, 11%, 0.12)",
-				"dark-active-bg": "hsla(9, 12%, 11%, 0.12)",
-				"dark-drag-bg": "hsla(9, 12%, 11%, 0.16)",
-				"dark-disabled-bg": "hsla(9, 12%, 11%, 0.38)",
-
-				"dark-on-bg": "hsla(11, 31%, 90%, 1)",
-				"dark-hover-on-bg": "hsla(11, 31%, 90%, 0.08)",
-				"dark-focus-on-bg": "hsla(11, 31%, 90%, 0.12)",
-				"dark-active-on-bg": "hsla(11, 31%, 90%, 0.12)",
-				"dark-drag-on-bg": "hsla(11, 31%, 90%, 0.16)",
-				"dark-disabled-on-bg": "hsla(11, 31%, 90%, 0.38)",
-
-				"dark-surface": "hsla(9, 12%, 11%, 1)",
-				"dark-hover-surface": "hsla(9, 12%, 11%, 0.08)",
-				"dark-focus-surface": "hsla(9, 12%, 11%, 0.12)",
-				"dark-active-surface": "hsla(9, 12%, 11%, 0.12)",
-				"dark-drag-surface": "hsla(9, 12%, 11%, 0.16)",
-				"dark-disabled-surface": "hsla(9, 12%, 11%, 0.38)",
-
-				"dark-on-surface": "hsla(11, 31%, 90%, 1)",
-				"dark-hover-on-surface": "hsla(11, 31%, 90%, 0.08)",
-				"dark-focus-on-surface": "hsla(11, 31%, 90%, 0.12)",
-				"dark-active-on-surface": "hsla(11, 31%, 90%, 0.12)",
-				"dark-drag-on-surface": "hsla(11, 31%, 90%, 0.16)",
-				"dark-disabled-on-surface": "hsla(11, 31%, 90%, 0.38)",
-
-				"dark-outline": "hsla(8, 11%, 63%, 1)",
-				"dark-hover-outline": "hsla(8, 11%, 63%, 0.08)",
-				"dark-focus-outline": "hsla(8, 11%, 63%, 0.12)",
-				"dark-active-outline": "hsla(8, 11%, 63%, 0.12)",
-				"dark-drag-outline": "hsla(8, 11%, 63%, 0.16)",
-				"dark-disabled-outline": "hsla(8, 11%, 63%, 0.38)",
-
-				"dark-surface-variant": "hsla(30, 11%, 28%, 1)",
-				"dark-hover-surface-variant": "hsla(30, 11%, 28%, 0.08)",
-				"dark-focus-surface-variant": "hsla(30, 11%, 28%, 0.12)",
-				"dark-active-surface-variant": "hsla(30, 11%, 28%, 0.12)",
-				"dark-drag-surface-variant": "hsla(30, 11%, 28%, 0.16)",
-				"dark-disabled-surface-variant": "hsla(30, 11%, 28%, 0.38)",
-
-				"dark-on-surface-variant": "hsla(12, 28%, 80%, 1)",
-				"dark-hover-on-surface-variant": "hsla(12, 28%, 80%, 0.08)",
-				"dark-focus-on-surface-variant": "hsla(12, 28%, 80%, 0.12)",
-				"dark-active-on-surface-variant": "hsla(12, 28%, 80%, 0.12)",
-				"dark-drag-on-surface-variant": "hsla(12, 28%, 80%, 0.16)",
-				"dark-disabled-on-surface-variant": "hsla(12, 28%, 80%, 0.38)",
+				"--md-source": "hsl(var(--md-source) / 1)",
+				primary0: "hsl(var(--md-ref-palette-primary0) / 1)",
+				primary10: "hsl(var(--md-ref-palette-primary10) / 1)",
+				primary20: "hsl(var(--md-ref-palette-primary20) / 1)",
+				primary30: "hsl(var(--md-ref-palette-primary30) / 1)",
+				primary40: "hsl(var(--md-ref-palette-primary40) / 1)",
+				primary50: "hsl(var(--md-ref-palette-primary50) / 1)",
+				primary60: "hsl(var(--md-ref-palette-primary60) / 1)",
+				primary70: "hsl(var(--md-ref-palette-primary70) / 1)",
+				primary80: "hsl(var(--md-ref-palette-primary80) / 1)",
+				primary90: "hsl(var(--md-ref-palette-primary90) / 1)",
+				primary95: "hsl(var(--md-ref-palette-primary95) / 1)",
+				primary99: "hsl(var(--md-ref-palette-primary99) / 1)",
+				primary100: "hsl(var(--md-ref-palette-primary100) / 1)",
+				secondary0: "hsl(var(--md-ref-palette-secondary0) / 1)",
+				secondary10: "hsl(var(--md-ref-palette-secondary10) / 1)",
+				secondary20: "hsl(var(--md-ref-palette-secondary20) / 1)",
+				secondary30: "hsl(var(--md-ref-palette-secondary30) / 1)",
+				secondary40: "hsl(var(--md-ref-palette-secondary40) / 1)",
+				secondary50: "hsl(var(--md-ref-palette-secondary50) / 1)",
+				secondary60: "hsl(var(--md-ref-palette-secondary60) / 1)",
+				secondary70: "hsl(var(--md-ref-palette-secondary70) / 1)",
+				secondary80: "hsl(var(--md-ref-palette-secondary80) / 1)",
+				secondary90: "hsl(var(--md-ref-palette-secondary90) / 1)",
+				secondary95: "hsl(var(--md-ref-palette-secondary95) / 1)",
+				secondary99: "hsl(var(--md-ref-palette-secondary99) / 1)",
+				secondary100: "hsl(var(--md-ref-palette-secondary100) / 1)",
+				tertiary0: "hsl(var(--md-ref-palette-tertiary0) / 1)",
+				tertiary10: "hsl(var(--md-ref-palette-tertiary10) / 1)",
+				tertiary20: "hsl(var(--md-ref-palette-tertiary20) / 1)",
+				tertiary30: "hsl(var(--md-ref-palette-tertiary30) / 1)",
+				tertiary40: "hsl(var(--md-ref-palette-tertiary40) / 1)",
+				tertiary50: "hsl(var(--md-ref-palette-tertiary50) / 1)",
+				tertiary60: "hsl(var(--md-ref-palette-tertiary60) / 1)",
+				tertiary70: "hsl(var(--md-ref-palette-tertiary70) / 1)",
+				tertiary80: "hsl(var(--md-ref-palette-tertiary80) / 1)",
+				tertiary90: "hsl(var(--md-ref-palette-tertiary90) / 1)",
+				tertiary95: "hsl(var(--md-ref-palette-tertiary95) / 1)",
+				tertiary99: "hsl(var(--md-ref-palette-tertiary99) / 1)",
+				tertiary100: "hsl(var(--md-ref-palette-tertiary100) / 1)",
+				error0: "hsl(var(--md-ref-palette-error0) / 1)",
+				error10: "hsl(var(--md-ref-palette-error10) / 1)",
+				error20: "hsl(var(--md-ref-palette-error20) / 1)",
+				error30: "hsl(var(--md-ref-palette-error30) / 1)",
+				error40: "hsl(var(--md-ref-palette-error40) / 1)",
+				error50: "hsl(var(--md-ref-palette-error50) / 1)",
+				error60: "hsl(var(--md-ref-palette-error60) / 1)",
+				error70: "hsl(var(--md-ref-palette-error70) / 1)",
+				error80: "hsl(var(--md-ref-palette-error80) / 1)",
+				error90: "hsl(var(--md-ref-palette-error90) / 1)",
+				error95: "hsl(var(--md-ref-palette-error95) / 1)",
+				error99: "hsl(var(--md-ref-palette-error99) / 1)",
+				error100: "hsl(var(--md-ref-palette-error100) / 1)",
+				neutral0: "hsl(var(--md-ref-palette-neutral0) / 1)",
+				neutral10: "hsl(var(--md-ref-palette-neutral10) / 1)",
+				neutral20: "hsl(var(--md-ref-palette-neutral20) / 1)",
+				neutral30: "hsl(var(--md-ref-palette-neutral30) / 1)",
+				neutral40: "hsl(var(--md-ref-palette-neutral40) / 1)",
+				neutral50: "hsl(var(--md-ref-palette-neutral50) / 1)",
+				neutral60: "hsl(var(--md-ref-palette-neutral60) / 1)",
+				neutral70: "hsl(var(--md-ref-palette-neutral70) / 1)",
+				neutral80: "hsl(var(--md-ref-palette-neutral80) / 1)",
+				neutral90: "hsl(var(--md-ref-palette-neutral90) / 1)",
+				neutral95: "hsl(var(--md-ref-palette-neutral95) / 1)",
+				neutral99: "hsl(var(--md-ref-palette-neutral99) / 1)",
+				neutral100: "hsl(var(--md-ref-palette-neutral100) / 1)",
+				"neutral-variant0":
+					"hsl(var(--md-ref-palette-neutral-variant0) / 1)",
+				"neutral-variant10":
+					"hsl(var(--md-ref-palette-neutral-variant10) / 1)",
+				"neutral-variant20":
+					"hsl(var(--md-ref-palette-neutral-variant20) / 1)",
+				"neutral-variant30":
+					"hsl(var(--md-ref-palette-neutral-variant30) / 1)",
+				"neutral-variant40":
+					"hsl(var(--md-ref-palette-neutral-variant40) / 1)",
+				"neutral-variant50":
+					"hsl(var(--md-ref-palette-neutral-variant50) / 1)",
+				"neutral-variant60":
+					"hsl(var(--md-ref-palette-neutral-variant60) / 1)",
+				"neutral-variant70":
+					"hsl(var(--md-ref-palette-neutral-variant70) / 1)",
+				"neutral-variant80":
+					"hsl(var(--md-ref-palette-neutral-variant80) / 1)",
+				"neutral-variant90":
+					"hsl(var(--md-ref-palette-neutral-variant90) / 1)",
+				"neutral-variant95":
+					"hsl(var(--md-ref-palette-neutral-variant95) / 1)",
+				"neutral-variant99":
+					"hsl(var(--md-ref-palette-neutral-variant99) / 1)",
+				"neutral-variant100":
+					"hsl(var(--md-ref-palette-neutral-variant100) / 1)",
+				"primary-light": "hsl(var(--md-sys-color-primary-light) / 1)",
+				"on-primary-light":
+					"hsl(var(--md-sys-color-on-primary-light) / 1)",
+				"primary-container-light":
+					"hsl(var(--md-sys-color-primary-container-light) / 1)",
+				"on-primary-container-light":
+					"hsl(var(--md-sys-color-on-primary-container-light) / 1)",
+				"secondary-light":
+					"hsl(var(--md-sys-color-secondary-light) / 1)",
+				"on-secondary-light":
+					"hsl(var(--md-sys-color-on-secondary-light) / 1)",
+				"secondary-container-light":
+					"hsl(var(--md-sys-color-secondary-container-light) / 1)",
+				"on-secondary-container-light":
+					"hsl(var(--md-sys-color-on-secondary-container-light) / 1)",
+				"tertiary-light": "hsl(var(--md-sys-color-tertiary-light) / 1)",
+				"on-tertiary-light":
+					"hsl(var(--md-sys-color-on-tertiary-light) / 1)",
+				"tertiary-container-light":
+					"hsl(var(--md-sys-color-tertiary-container-light) / 1)",
+				"on-tertiary-container-light":
+					"hsl(var(--md-sys-color-on-tertiary-container-light) / 1)",
+				"error-light": "hsl(var(--md-sys-color-error-light) / 1)",
+				"on-error-light": "hsl(var(--md-sys-color-on-error-light) / 1)",
+				"error-container-light":
+					"hsl(var(--md-sys-color-error-container-light) / 1)",
+				"on-error-container-light":
+					"hsl(var(--md-sys-color-on-error-container-light) / 1)",
+				"outline-light": "hsl(var(--md-sys-color-outline-light) / 1)",
+				"background-light":
+					"hsl(var(--md-sys-color-background-light) / 1)",
+				"on-background-light":
+					"hsl(var(--md-sys-color-on-background-light) / 1)",
+				"surface-light": "hsl(var(--md-sys-color-surface-light) / 1)",
+				"on-surface-light":
+					"hsl(var(--md-sys-color-on-surface-light) / 1)",
+				"surface-variant-light":
+					"hsl(var(--md-sys-color-surface-variant-light) / 1)",
+				"on-surface-variant-light":
+					"hsl(var(--md-sys-color-on-surface-variant-light) / 1)",
+				"inverse-surface-light":
+					"hsl(var(--md-sys-color-inverse-surface-light) / 1)",
+				"inverse-on-surface-light":
+					"hsl(var(--md-sys-color-inverse-on-surface-light) / 1)",
+				"inverse-primary-light":
+					"hsl(var(--md-sys-color-inverse-primary-light) / 1)",
+				"shadow-light": "hsl(var(--md-sys-color-shadow-light) / 1)",
+				"surface-tint-light":
+					"hsl(var(--md-sys-color-surface-tint-light) / 1)",
+				"outline-variant-light":
+					"hsl(var(--md-sys-color-outline-variant-light) / 1)",
+				"scrim-light": "hsl(var(--md-sys-color-scrim-light) / 1)",
+				"primary-dark": "hsl(var(--md-sys-color-primary-dark) / 1)",
+				"on-primary-dark":
+					"hsl(var(--md-sys-color-on-primary-dark) / 1)",
+				"primary-container-dark":
+					"hsl(var(--md-sys-color-primary-container-dark) / 1)",
+				"on-primary-container-dark":
+					"hsl(var(--md-sys-color-on-primary-container-dark) / 1)",
+				"secondary-dark": "hsl(var(--md-sys-color-secondary-dark) / 1)",
+				"on-secondary-dark":
+					"hsl(var(--md-sys-color-on-secondary-dark) / 1)",
+				"secondary-container-dark":
+					"hsl(var(--md-sys-color-secondary-container-dark) / 1)",
+				"on-secondary-container-dark":
+					"hsl(var(--md-sys-color-on-secondary-container-dark) / 1)",
+				"tertiary-dark": "hsl(var(--md-sys-color-tertiary-dark) / 1)",
+				"on-tertiary-dark":
+					"hsl(var(--md-sys-color-on-tertiary-dark) / 1)",
+				"tertiary-container-dark":
+					"hsl(var(--md-sys-color-tertiary-container-dark) / 1)",
+				"on-tertiary-container-dark":
+					"hsl(var(--md-sys-color-on-tertiary-container-dark) / 1)",
+				"error-dark": "hsl(var(--md-sys-color-error-dark) / 1)",
+				"on-error-dark": "hsl(var(--md-sys-color-on-error-dark) / 1)",
+				"error-container-dark":
+					"hsl(var(--md-sys-color-error-container-dark) / 1)",
+				"on-error-container-dark":
+					"hsl(var(--md-sys-color-on-error-container-dark) / 1)",
+				"outline-dark": "hsl(var(--md-sys-color-outline-dark) / 1)",
+				"background-dark":
+					"hsl(var(--md-sys-color-background-dark) / 1)",
+				"on-background-dark":
+					"hsl(var(--md-sys-color-on-background-dark) / 1)",
+				"surface-dark": "hsl(var(--md-sys-color-surface-dark) / 1)",
+				"on-surface-dark":
+					"hsl(var(--md-sys-color-on-surface-dark) / 1)",
+				"surface-variant-dark":
+					"hsl(var(--md-sys-color-surface-variant-dark) / 1)",
+				"on-surface-variant-dark":
+					"hsl(var(--md-sys-color-on-surface-variant-dark) / 1)",
+				"inverse-surface-dark":
+					"hsl(var(--md-sys-color-inverse-surface-dark) / 1)",
+				"inverse-on-surface-dark":
+					"hsl(var(--md-sys-color-inverse-on-surface-dark) / 1)",
+				"inverse-primary-dark":
+					"hsl(var(--md-sys-color-inverse-primary-dark) / 1)",
+				"shadow-dark": "hsl(var(--md-sys-color-shadow-dark) / 1)",
+				"surface-tint-dark":
+					"hsl(var(--md-sys-color-surface-tint-dark) / 1)",
+				"outline-variant-dark":
+					"hsl(var(--md-sys-color-outline-variant-dark) / 1)",
+				"scrim-dark": "hsl(var(--md-sys-color-scrim-dark) / 1)",
 			},
 			keyframes: {
 				pulsing: {

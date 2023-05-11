@@ -32,7 +32,7 @@ export default function App() {
 				<Meta />
 				<Links />
 			</head>
-			<body className="bg-light-bg dark:bg-dark-bg">
+			<body className="bg-background-light dark:bg-background-dark">
 				<Button
 					onClick={() => {
 						if (theme === "light") {

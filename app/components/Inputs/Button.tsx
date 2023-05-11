@@ -9,7 +9,6 @@ import {
 } from "~/StyleHelpers";
 import { BubbleStyles } from "../Accents/Bubble";
 import { useTab } from "~/Hooks/useTab";
-import { Ripple } from "../Accents/Ripple";
 
 export interface ButtonProps
 	extends React.HtmlHTMLAttributes<HTMLButtonElement> {
@@ -34,66 +33,65 @@ const BaseButtonClsxs: ClassOptions = {
 
 const TextButtonClsxs: ClassOptions = {
 	...BaseButtonClsxs,
-	text: "text-light-primary dark:text-dark-primary",
+	text: "text-primary-light dark:text-primary-dark",
 	disabled:
-		"disabled:text-light-disabled-on-surface dark:disabled:text-dark-disabled-on-surface",
-	hover: "before:enabled:hover:bg-light-hover-primary before:dark:enabled:hover:bg-dark-hover-primary",
+		"disabled:text-on-surface-light disabled:dark:text-on-surface-dark disabled:opacity-disabled",
+	hover: "before:enabled:hover:bg-primary-light before:dark:enabled:hover:bg-primary-dark before:enabled:hover:opacity-hover",
 	focus_visible:
-		"focus-visible:outline-none before:focus-visible:bg-light-focus-primary before:dark:focus-visible:bg-dark-focus-primary",
-	active: "before:active:bg-light-active-primary before:dark:active:bg-dark-active-primary",
+		"focus-visible:outline-none before:focus-visible:bg-primary-light before:dark:focus-visible:bg-primary-dark before:focus-visible:opacity-focus",
+	active: "before:enabled:active:bg-primary-light before:enabled:dark:active:bg-primary-dark before:enabled:active:opacity-active",
 };
 
 const ElevatedButtonClsxs: ClassOptions = {
 	...BaseButtonClsxs,
 	shadow: "shadow",
-	bg: "bg-light-surface-low dark:bg-dark-surface-low",
-	text: "text-light-primary dark:text-dark-primary",
+	bg: "bg-surface-light dark:bg-surface-dark",
+	text: "text-primary-light dark:text-primary-dark",
 	disabled:
-		"disabled:bg-light-focus-primary disabled:shadow-sm dark:disabled:bg-dark-focus-primary disabled:text-light-disabled-on-surface dark:disabled:text-dark-disabled-on-surface",
-	hover: "before:enabled:hover:bg-light-hover-primary before:dark:enabled:hover:bg-dark-hover-primary before:enabled:hover:shadow-md",
+		"disabled:bg-transparent before:disabled:bg-primary-light disabled:shadow-sm before:dark:disabled:bg-primary-dark disabled:text-on-surface-light dark:disabled:text-on-surface-dark disabled:opacity-disabled before:disabled:opacity-active",
+	hover: "before:enabled:hover:bg-primary-light before:dark:enabled:hover:bg-primary-dark before:hover:opacity-hover before:enabled:hover:shadow-md",
 	focus_visible:
-		"focus-visible:outline-none before:focus-visible:bg-light-focus-primary before:dark:focus-visible:bg-dark-focus-primary",
-	active: "before:active:bg-light-active-primary before:dark:active:bg-dark-active-primary before:active:shadow",
+		"focus-visible:outline-none before:focus-visible:bg-primary-light before:dark:focus-visible:bg-primary-dark before:focus-visible:opacity-focus",
+	active: "before:enabled:active:bg-primary-light before:enabled:dark:active:bg-primary-dark before:enabled:active:opacity-active before:enabled:active:shadow",
 };
 
 const FilledButtonClsxs: ClassOptions = {
 	...BaseButtonClsxs,
 	shadow: "shadow-sm",
-	bg: "bg-light-primary dark:bg-dark-primary",
-	text: "text-light-on-primary dark:text-dark-on-primary",
+	bg: "bg-primary-light dark:bg-primary-dark",
+	text: "text-on-primary-light dark:text-on-primary-dark",
 	disabled:
-		"disabled:bg-light-focus-on-surface dark:disabled:bg-dark-focus-on-surface disabled:text-light-disabled-on-surface dark:disabled:text-dark-disabled-on-surface",
-	hover: "before:enabled:hover:bg-light-hover-on-primary before:dark:enabled:hover:bg-dark-hover-on-primary before:enabled:hover:shadow",
+		"disabled:bg-transparent before:disabled:bg-on-surface-light before:dark:disabled:bg-on-surface-dark disabled:text-on-surface-light dark:disabled:text-on-surface-dark disabled:opacity-disabled before:disabled:opacity-active",
+	hover: "before:enabled:hover:bg-on-primary-light before:dark:enabled:hover:bg-on-primary-dark before:enabled:hover:shadow before:enabled:hover:opacity-hover",
 	focus_visible:
-		"focus-visible:outline-none before:focus-visible:bg-light-focus-on-primary before:dark:focus-visible:bg-dark-focus-on-primary before:focus-visible:shadow-sm",
-	active: "before:active:bg-light-active-on-primary before:dark:active:bg-dark-active-on-primary before:active:shadow-sm",
+		"focus-visible:outline-none before:focus-visible:bg-on-primary-light before:dark:focus-visible:bg-on-primary-dark before:focus-visible:shadow-sm before:focus-visible:opacity-focus",
+	active: "before:enabled:active:bg-on-primary-light before:dark:enabled:active:bg-on-primary-dark before:enabled:active:shadow-sm before:enabled:active:opacity-active",
 };
 
 const TonalButtonClsxs: ClassOptions = {
 	...BaseButtonClsxs,
 	shadow: "shadow-sm",
-	p: "px-6",
-	bg: "bg-light-secondary-container dark:bg-dark-secondary-container",
-	text: "text-light-on-secondary-container dark:text-dark-on-secondary-container",
+	bg: "bg-secondary-container-light dark:bg-secondary-container-dark",
+	text: "text-on-secondary-container-light dark:text-on-secondary-container-dark",
 	disabled:
-		"disabled:bg-light-focus-on-surface dark:disabled:bg-dark-focus-on-surface disabled:text-light-disabled-on-surface dark:disabled:text-dark-disabled-on-surface",
-	hover: "before:enabled:hover:bg-light-hover-on-secondary-container before:dark:enabled:hover:bg-dark-hover-on-secondary-container before:enabled:hover:shadow",
+		"disabled:bg-transparent before:disabled:bg-on-surface-light before:dark:disabled:bg-on-surface-dark disabled:text-on-surface-light dark:disabled:text-on-surface-dark disabled:opacity-disabled before:disabled:opacity-active",
+	hover: "before:enabled:hover:bg-on-secondary-container-light before:dark:enabled:hover:bg-on-secondary-container-dark before:enabled:hover:shadow before:enabled:hover:opacity-hover",
 	focus_visible:
-		"focus-visible:outline-none before:focus-visible:bg-light-focus-on-secondary-container before:dark:focus-visible:bg-dark-focus-on-secondary-container before:focus-visible:shadow-sm",
-	active: "before:active:bg-light-active-on-secondary-container before:dark:active:bg-dark-active-on-secondary-container before:active:shadow-sm",
+		"focus-visible:outline-none before:focus-visible:bg-on-secondary-container-light before:dark:focus-visible:bg-on-secondary-container-dark before:focus-visible:shadow-sm before:focus-visible:opacity-focus",
+	active: "before:enabled:active:bg-on-secondary-container-light before:dark:enabled:active:bg-on-secondary-container-dark before:enabled:active:shadow-sm before:enabled:active:opacity-active",
 };
 
 const OutlinedButtonClsxs: ClassOptions = {
 	...BaseButtonClsxs,
 	bg: "bg-transparent",
-	text: "text-light-primary dark:text-dark-primary",
-	border: "border border-light-outline dark:border-dark-outline",
-	hover: "before:enabled:hover:shadow-inner before:enabled:hover:bg-light-hover-primary before:dark:enabled:hover:bg-dark-hover-primary",
+	text: "text-primary-light dark:text-primary-dark",
+	border: "border border-outline-light dark:border-outline-dark",
+	hover: "before:enabled:hover:shadow-inner before:enabled:hover:bg-primary-light before:dark:enabled:hover:bg-primary-dark before:hover:opacity-hover",
 	focus_visible:
-		"focus-visible:outline-none before:focus-visible:bg-light-focus-primary before:dark:focus-visible:bg-dark-focus-primary",
-	active: "before:active:bg-light-active-primary before:dark:active:bg-dark-active-primary",
+		"focus-visible:outline-none before:focus-visible:bg-primary-light before:dark:focus-visible:bg-primary-dark before:focus-visible:opacity-focus",
+	active: "before:enabled:active:bg-primary-light before:dark:enabled:active:bg-primary-dark before:enabled:active:opacity-active",
 	disabled:
-		"disabled:border-light-focus-on-surface dark:disabled:border-dark-focus-on-surface disabled:text-light-disabled-on-surface dark:disabled:text-dark-disabled-on-surface",
+		"disabled:border-on-surface-light dark:disabled:border-on-surface-dark disabled:text-on-surface-light dark:disabled:text-on-surface-dark disabled:opacity-disabled",
 };
 
 export type ButtonVariants =

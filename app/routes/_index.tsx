@@ -18,7 +18,10 @@ export default function Index() {
 			<Tooltip title="Hello">
 				<div>Hello</div>
 			</Tooltip>
-			<Button>TEXT</Button>
+			<div className="flex flex-row gap-3">
+				<Button>TEXT</Button>
+				<Button disabled>TEXT</Button>
+			</div>
 			<div className="flex flex-row gap-3">
 				<Button variant="elevated">ELEVATED</Button>
 				<Button variant="elevated" disabled>

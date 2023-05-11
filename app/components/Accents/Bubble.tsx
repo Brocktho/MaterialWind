@@ -10,7 +10,7 @@ export const BubbleStyles = (user_classes?: ClassOptions) =>
 			h: "after:h-full",
 			rounded: "after:rounded-full",
 			animate: "focus-visible:motion-safe:after:animate-pulsing ",
-			bg: "after:focus-visible:bg-light-focus-primary after:focus-visible:dark:bg-dark-focus-primary",
+			bg: "after:focus-visible:bg-primary-light after:focus-visible:dark:bg-primary-dark after:focus-visible:opacity-focus",
 		},
 		user_classes
 	);
