@@ -2,12 +2,14 @@
 
 import clsx from "clsx";
 import React, { useRef, useState } from "react";
+
 import { type ClassOptions, CreateClasses } from "~/StyleHelpers";
 import { BubbleStyles } from "../Accents/Bubble";
 import { useTab } from "~/Hooks/useTab";
 
 export interface ButtonProps
 	extends React.HtmlHTMLAttributes<HTMLButtonElement> {
+	active?: boolean;
 	clsxs?: ClassOptions;
 	disabled?: boolean;
 	variant?: ButtonVariants;
@@ -153,7 +155,8 @@ const Button = React.forwardRef(function Button(
 		disabled,
 		onClick,
 		onMouseDown,
-		variant,
+		active,
+		variant = "text",
 		...rest
 	} = props;
 	const spanRef = useRef<HTMLSpanElement>(null);
@@ -164,7 +167,7 @@ const Button = React.forwardRef(function Button(
 	});
 	const [focused, setFocused] = useState(false);
 	const [cannotFocus, setCannotFocus] = useState(false);
-	const thisVariant = Variants[variant || "text"];
+	const thisVariant = Variants[variant];
 	return (
 		<button
 			className={clsx(
