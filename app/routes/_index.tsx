@@ -1,7 +1,8 @@
 /** @format */
 
-import { Tooltip } from "@mui/material";
+import { Tooltip, Typography } from "@mui/material";
 import type { V2_MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 import Badge from "~/components/Accents/Badge";
 import Button from "~/components/Inputs/Button";
 
@@ -13,7 +14,9 @@ export default function Index() {
 	return (
 		<div className="w-full min-h-screen h-full flex flex-col items-center justify-center gap-6">
 			<div className="flex flex-row gap-3">
-				<Button>TEXT</Button>
+				<Button component={Link} to="">
+					TEXT
+				</Button>
 				<Button disabled>TEXT</Button>
 			</div>
 			<div className="flex flex-row gap-3">

@@ -1,19 +1,42 @@
 /** @format */
 
 import clsx from "clsx";
-import React, { useRef, useState } from "react";
+import React, { createElement, useRef } from "react";
 
 import { type ClassOptions, CreateClasses } from "~/StyleHelpers";
 import { BubbleStyles } from "../Accents/Bubble";
-import { useTab } from "~/Hooks/useTab";
+import type { OverridableComponent } from "../utils/OverridableComponents";
 
-export interface ButtonProps
+export interface DefaultButtonProps<D extends React.ElementType = "button">
 	extends React.HtmlHTMLAttributes<HTMLButtonElement> {
+	component?: D;
 	active?: boolean;
 	clsxs?: ClassOptions;
 	disabled?: boolean;
 	variant?: ButtonVariants;
+	children?: React.ReactNode;
+	onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
+export interface ButtonPropsMap<
+	P = {},
+	D extends React.ElementType = "button"
+> {
+	props: {
+		component?: D;
+		active?: boolean;
+		clsxs?: ClassOptions;
+		disabled?: boolean;
+		variant?: ButtonVariants;
+		children?: React.ReactNode;
+		onClick?: React.MouseEventHandler<D>;
+	} & P;
+	defaultComponent: D;
+}
+
+export type MaterialButton = OverridableComponent<ButtonPropsMap>;
+
+type ButtonProps<D extends React.ElementType = "button"> =
+	DefaultButtonProps<D> & React.ComponentPropsWithoutRef<D>;
 
 export const BaseButtonClsxs: ClassOptions = {
 	h: "h-10",
@@ -145,29 +168,22 @@ const Variants: Record<
 	},
 };
 
-const Button = React.forwardRef(function Button(
-	props: ButtonProps,
-	ref: React.ForwardedRef<HTMLButtonElement>
+function CreateButton<D extends React.ElementType = "button">(
+	props: ButtonProps<D>
 ) {
 	const {
+		component = "button",
 		children,
 		clsxs,
 		disabled,
 		onClick,
-		onMouseDown,
 		active,
 		variant = "text",
 		...rest
 	} = props;
 	const spanRef = useRef<HTMLSpanElement>(null);
-	let timeout: NodeJS.Timeout;
-	useTab(() => {
-		setCannotFocus(false);
-		clearTimeout(timeout);
-	});
-	const [focused, setFocused] = useState(false);
-	const [cannotFocus, setCannotFocus] = useState(false);
 	const thisVariant = Variants[variant];
+	return createElement(component, props);
 	return (
 		<button
 			className={clsx(
@@ -183,23 +199,7 @@ const Button = React.forwardRef(function Button(
 				}
 				onClick && onClick(e);
 			}}
-			onMouseDown={e => {
-				if (disabled) {
-					e.preventDefault();
-				}
-				onMouseDown && onMouseDown(e);
-				setCannotFocus(true);
-				setFocused(false);
-				timeout = setTimeout(() => {
-					setCannotFocus(false);
-				}, 25);
-			}}
 			ref={ref}
-			onFocus={() => {
-				if (cannotFocus) return;
-				setFocused(true);
-			}}
-			onBlur={() => setFocused(false)}
 			{...rest}>
 			{children}
 			<span
@@ -207,6 +207,6 @@ const Button = React.forwardRef(function Button(
 				className="absolute inset-0 overflow-hidden flex items-center justify-center z-0"></span>
 		</button>
 	);
-});
+}
 
-export default Button;
+export default CreateButton;
