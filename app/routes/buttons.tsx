@@ -1,33 +1,21 @@
 /** @format */
 
-import { defer, type V2_MetaFunction } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
-import fs from "node:fs";
 import Button from "~/components/Inputs/Button";
+import FAB from "~/components/Inputs/FAB";
+import { PencilIcon, AcademicCapIcon } from "@heroicons/react/24/solid";
 
-export const loader = async () => {
-	return defer({
-		routes: fs.readdir(`${__dirname}/app/routes`, files => {
-			return files?.path || "Empty";
-		}),
-	});
-};
-
-export const meta: V2_MetaFunction = () => {
-	return [{ title: "New Remix App" }];
-};
-
-export default function Index() {
-	const data = useLoaderData<typeof loader>();
+export default function ButtonsRoute() {
 	return (
 		<div className="w-full min-h-screen h-full flex flex-col items-center justify-center gap-6">
 			<div className="flex flex-row gap-3">
+				<Button disabled component={"p"}>
+					TEXT
+				</Button>
+				<Button>TEXT</Button>
 				<Button disabled>TEXT</Button>
 			</div>
 			<div className="flex flex-row gap-3">
-				<Button component={Link} to="/home" variant="elevated">
-					Home
-				</Button>
+				<Button variant="elevated">Home</Button>
 				<Button variant="elevated" disabled>
 					ELEVATED
 				</Button>
@@ -49,6 +37,14 @@ export default function Index() {
 				<Button disabled variant="outlined">
 					OUTLINED
 				</Button>
+			</div>
+			<div className="flex flex-row gap-3">
+				<FAB>
+					<PencilIcon />
+				</FAB>
+				<FAB>
+					<AcademicCapIcon />
+				</FAB>
 			</div>
 		</div>
 	);

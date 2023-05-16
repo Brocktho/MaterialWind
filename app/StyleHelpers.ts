@@ -43,4 +43,6 @@ export interface ClassOptions extends Record<string, string | undefined> {
 	after?: string;
 	focus_visible?: string;
 	animate?: string;
+	cursor?: string;
+	overflow?: string;
 }
