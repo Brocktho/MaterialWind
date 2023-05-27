@@ -12,7 +12,7 @@ import {
 } from "@remix-run/react";
 import { SSRProvider } from "react-aria";
 import tailwindcss from "./tailwind.css";
-import Button from "./components/Inputs/Button";
+import Button from "~/components/Button";
 import { useState } from "react";
 
 export const links: LinksFunction = () => [

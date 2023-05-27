@@ -1,5 +1,13 @@
 /** @format */
 
+export const CreateConditionalClass = (
+	condition?: boolean,
+	defaults?: string,
+	given?: string
+) => {
+	return condition && (given || defaults);
+};
+
 export const CreateClasses = (defaults: ClassOptions, given?: ClassOptions) => {
 	if (given) {
 		const merged = Object.assign({}, defaults, given);

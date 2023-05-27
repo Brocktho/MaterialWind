@@ -1,14 +1,23 @@
 /** @format */
 
 import clsx from "clsx";
-import React, { createElement, useRef } from "react";
+import React, { createElement, forwardRef, useRef } from "react";
 
-import { type ClassOptions, CreateClasses } from "~/StyleHelpers";
+import {
+	type ClassOptions,
+	CreateClasses,
+	CreateConditionalClass,
+} from "~/StyleHelpers";
 import { BubbleStyles } from "../Accents/Bubble";
+import type {
+	DefaultOverridableProps,
+	OverridableProps,
+} from "../utils/OverridableComponents";
+import { useButton, useFocusRing } from "react-aria";
+import useForkRef from "~/Hooks/useForkRef";
 
 export interface DefaultButtonProps<D extends React.ElementType = "button">
-	extends React.HtmlHTMLAttributes<HTMLButtonElement> {
-	component?: D;
+	extends DefaultOverridableProps<D> {
 	active?: boolean;
 	clsxs?: ClassOptions;
 	disabled?: boolean;
@@ -17,7 +26,7 @@ export interface DefaultButtonProps<D extends React.ElementType = "button">
 }
 
 export type ButtonProps<D extends React.ElementType = "button"> =
-	DefaultButtonProps<D> & React.ComponentPropsWithoutRef<D>;
+	OverridableProps<D, DefaultButtonProps<D>>;
 
 export const BaseButtonClsxs: ClassOptions = {
 	h: "h-10",
@@ -31,6 +40,7 @@ export const BaseButtonClsxs: ClassOptions = {
 	align: "items-center justify-center",
 	display: "flex",
 	position: "relative",
+	focus: "focus:outline-none",
 };
 
 export const TextButtonClsxs: ClassOptions = {
@@ -41,7 +51,7 @@ export const TextButtonClsxs: ClassOptions = {
 	hover: "before:hover:bg-primary-light before:dark:hover:bg-primary-dark before:hover:opacity-hover",
 	focus_visible:
 		"focus-visible:outline-none before:focus-visible:bg-primary-light before:dark:focus-visible:bg-primary-dark before:focus-visible:opacity-focus",
-	active: "before:active:scale-x-100 before:active:bg-primary-light before:dark:active:bg-primary-dark before:active:opacity-active",
+	active: "before:active:bg-primary-light before:dark:active:bg-primary-dark before:active:opacity-active",
 };
 export const TextButtonBubbleClsxs: ClassOptions = {
 	focus_visible:
@@ -58,7 +68,7 @@ export const ElevatedButtonClsxs: ClassOptions = {
 	hover: "before:hover:bg-primary-light before:dark:hover:bg-primary-dark before:hover:opacity-hover before:hover:shadow-md",
 	focus_visible:
 		"focus-visible:outline-none before:focus-visible:bg-primary-light before:dark:focus-visible:bg-primary-dark before:focus-visible:opacity-focus",
-	active: "before:active:scale-x-100 before:active:bg-primary-light before:dark:active:bg-primary-dark before:active:opacity-active before:active:shadow",
+	active: "before:active:bg-primary-light before:dark:active:bg-primary-dark before:active:opacity-active before:active:shadow",
 };
 export const ElevatedButtonBubbleClsxs: ClassOptions = {
 	focus_visible:
@@ -75,7 +85,7 @@ export const FilledButtonClsxs: ClassOptions = {
 	hover: "before:hover:bg-on-primary-light before:dark:hover:bg-on-primary-dark before:hover:shadow before:hover:opacity-hover",
 	focus_visible:
 		"focus-visible:outline-none before:focus-visible:bg-on-primary-light before:dark:focus-visible:bg-on-primary-dark before:focus-visible:shadow-sm before:focus-visible:opacity-focus",
-	active: "before:active:scale-x-100 before:active:bg-on-primary-light before:dark:active:bg-on-primary-dark before:active:shadow-sm before:active:opacity-active",
+	active: "before:active:bg-on-primary-light before:dark:active:bg-on-primary-dark before:active:shadow-sm before:active:opacity-active",
 };
 export const FilledButtonBubbleClsxs: ClassOptions = {
 	focus_visible:
@@ -92,7 +102,7 @@ export const TonalButtonClsxs: ClassOptions = {
 	hover: "before:hover:bg-on-secondary-container-light before:dark:hover:bg-on-secondary-container-dark before:hover:shadow before:hover:opacity-hover",
 	focus_visible:
 		"focus-visible:outline-none before:focus-visible:bg-on-secondary-container-light before:dark:focus-visible:bg-on-secondary-container-dark before:focus-visible:shadow-sm before:focus-visible:opacity-focus",
-	active: "before:active:scale-x-100 before:active:bg-on-secondary-container-light before:dark:active:bg-on-secondary-container-dark before:active:shadow-sm before:active:opacity-active",
+	active: "before:active:bg-on-secondary-container-light before:dark:active:bg-on-secondary-container-dark before:active:shadow-sm before:active:opacity-active",
 };
 export const TonalButtonBubbleClsxs: ClassOptions = {
 	focus_visible:
@@ -107,7 +117,7 @@ export const OutlinedButtonClsxs: ClassOptions = {
 	hover: "before:hover:shadow-inner before: before:hover:bg-primary-light before:dark:hover:bg-primary-dark before:hover:opacity-hover",
 	focus_visible:
 		"focus-visible:outline-none before:focus-visible:bg-primary-light before:dark:focus-visible:bg-primary-dark before:focus-visible:opacity-focus",
-	active: "before:active:scale-x-100 before:active:w-full before:active:bg-primary-light before:dark:active:bg-primary-dark before:active:opacity-active",
+	active: "before:active:w-full before:active:bg-primary-light before:dark:active:bg-primary-dark before:active:opacity-active",
 	disabled:
 		"border-on-surface-light dark:border-on-surface-dark text-on-surface-light dark:text-on-surface-dark opacity-disabled",
 };
@@ -149,11 +159,12 @@ const Variants: Record<
 	},
 };
 
-export const CanDisable = ["button", "fieldset", "select"];
+//export const CanDisable = ["button", "fieldset", "select"];
 
-const Button = React.forwardRef(function Button<
+export const Button = forwardRef(function Button<
 	D extends React.ElementType = "button"
->(props: ButtonProps<D>, ref: React.Ref<D>) {
+>(props: ButtonProps<D>, ref: React.Ref<Element>) {
+	const ariaRef = useRef<Element>(null);
 	const {
 		component = "button",
 		children,
@@ -165,27 +176,50 @@ const Button = React.forwardRef(function Button<
 		className,
 		...rest
 	} = props;
-	const spanRef = useRef<HTMLSpanElement>(null);
+	const { buttonProps, isPressed } = useButton(
+		{ ...rest, elementType: component },
+		ariaRef
+	);
+	const { focusProps, isFocusVisible } = useFocusRing();
+	const handleRef = useForkRef(ref, ariaRef);
 	const { button, bubble } = Variants[variant];
+	const {
+		disabled: disabledUserClsx,
+		active: activeUserClsx,
+		hover: hoverUserClsx,
+		focus_visible: focusVisibleUserClsx,
+		...restUserClsx
+	} = clsxs || {};
 	const {
 		disabled: disabledClsx,
 		hover,
 		active: activeClsx,
+		focus_visible: focusVisibleClsx,
 		...restClsx
 	} = button;
 	let finalProps = {
-		...rest,
+		...buttonProps,
+		...focusProps,
+		ref: handleRef,
 		className: clsx(
-			disabled && disabledClsx,
-			!disabled && hover,
-			!disabled && activeClsx,
-			...CreateClasses(restClsx, clsxs),
-			BubbleStyles(bubble),
+			CreateConditionalClass(disabled, disabledClsx, disabledUserClsx),
+			CreateConditionalClass(!disabled, hover, hoverUserClsx),
+			CreateConditionalClass(
+				!disabled && isPressed,
+				activeClsx,
+				activeUserClsx
+			),
+			CreateConditionalClass(
+				isFocusVisible,
+				focusVisibleClsx,
+				focusVisibleUserClsx
+			),
+			...CreateClasses(restClsx, restUserClsx),
+			[isFocusVisible && BubbleStyles(bubble)],
 			className
 		),
 		disabled,
 		"aria-disabled": disabled,
-		ref,
 		onClick: (e: any) => {
 			if (disabled) {
 				e.preventDefault();
@@ -196,16 +230,11 @@ const Button = React.forwardRef(function Button<
 		children: (
 			<>
 				{children}
-				<span
-					ref={spanRef}
-					className={"absolute inset-0 overflow-hidden"}></span>
+				<span className={"absolute inset-0 overflow-hidden"}></span>
 			</>
 		),
 	};
-	return createElement(component, {
-		...finalProps,
-		ref,
-	});
+	return createElement(component, finalProps);
 });
 
 export default Button;
